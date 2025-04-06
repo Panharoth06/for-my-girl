@@ -1449,3 +1449,165 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* Ensure the body takes full viewport height on mobile */
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+/* General scaling for smaller screens */
+@media screen and (max-width: 768px) {
+  .flowers {
+    transform: scale(0.7); /* Scale down flowers on tablets */
+  }
+
+  .flower {
+    bottom: 5vmin; /* Reduce bottom spacing */
+  }
+
+  .flower__line {
+    height: 45vmin; /* Shorter stems on smaller screens */
+    width: 1vmin;
+  }
+
+  .flower__leaf {
+    width: 6vmin;
+    height: 8vmin;
+  }
+
+  .flower__white-circle {
+    width: 6vmin;
+    height: 3vmin;
+    left: -2.5vmin;
+    top: -2vmin;
+  }
+
+  .flower__grass {
+    bottom: 8vmin;
+    left: -5vmin;
+  }
+
+  .flower__g-long {
+    bottom: 8vmin;
+    left: -2vmin;
+  }
+
+  .long-g .leaf {
+    --w: 10vmin;
+    --h: 30vmin;
+  }
+
+  .title {
+    font-size: 1.2rem; /* Adjust title size */
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+
+  .day {
+    filter: blur(0.05vmin); /* Slightly reduce blur for performance */
+  }
+}
+
+/* Mobile-specific adjustments (below 480px) */
+@media screen and (max-width: 480px) {
+  .flowers {
+    transform: scale(0.5); /* Further scale down for phones */
+  }
+
+  .flower {
+    bottom: 3vmin;
+  }
+
+  .flower__line {
+    height: 35vmin; /* Even shorter stems */
+    width: 0.8vmin;
+  }
+
+  .flower__leaf {
+    width: 4vmin;
+    height: 6vmin;
+  }
+
+  .flower__white-circle {
+    width: 4vmin;
+    height: 2vmin;
+    left: -2vmin;
+    top: -1.5vmin;
+  }
+
+  .flower__line__leaf {
+    --w: 5vmin;
+    --h: calc(var(--w) + 1vmin);
+  }
+
+  .flower__grass {
+    bottom: 5vmin;
+    left: -3vmin;
+    transform: rotate(-45deg) rotateY(30deg);
+  }
+
+  .flower__grass--top {
+    width: 5vmin;
+    height: 7vmin;
+  }
+
+  .flower__grass--bottom {
+    height: 20vmin;
+  }
+
+  .flower__g-long {
+    --w: 1.5vmin;
+    --h: 4vmin;
+    bottom: 5vmin;
+    left: -1vmin;
+  }
+
+  .flower__g-right .leaf {
+    width: 20vmin;
+    height: 35vmin;
+  }
+
+  .long-g {
+    bottom: 15vmin;
+    left: -25vmin;
+  }
+
+  .long-g .leaf {
+    --w: 8vmin;
+    --h: 25vmin;
+  }
+
+  .title {
+    font-size: 1rem;
+    margin-top: 5px;
+    padding: 0 5px;
+    line-height: 1.2;
+  }
+
+  /* Reduce animation intensity for performance */
+  .flower--1,
+  .flower--2,
+  .flower--3 {
+    animation-duration: 6s; /* Slower animation */
+  }
+
+  .flower__light {
+    animation: none; /* Disable light animation on mobile for performance */
+  }
+}
+
+/* Ensure animations don’t overflow on small screens */
+@media screen and (max-height: 600px) {
+  .flower__line {
+    height: 30vmin;
+  }
+
+  .flower__grass--bottom {
+    height: 15vmin;
+  }
+
+  .long-g .leaf {
+    --h: 20vmin;
+  }
+}
