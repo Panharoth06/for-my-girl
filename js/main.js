@@ -11,14 +11,20 @@ onload = () => {
 
     function appendTitle() {
       if (index < titles.length) {
-        titleElement.innerHTML += titles[index];
+        // Handle spaces properly for better readability
+        if (titles[index] === " ") {
+          titleElement.innerHTML += "&nbsp;";
+        } else {
+          titleElement.innerHTML += titles[index];
+        }
         index++;
-        setTimeout(appendTitle, 70); // 1000ms delay
+        setTimeout(appendTitle, 70); // 70ms delay between characters
       }
     }
 
     appendTitle();
 
-    clearTimeout(c);
+    // This clearTimeout is unnecessary since 'c' is used for the initial timeout
+    // that has already completed by this point
   }, 1000);
 };
