@@ -1,15 +1,15 @@
 const title = document.querySelector('.title')
-const text = 'Have Something for You'.split('')
+const text = 'Have Something for Youu'
 for (let index = 0; index < text.length; index++) {
   if (text[index] !== ' ') {
-    title.innerHTML += `<span>${text[index]}</span>` // Fixed closing tag
+    title.innerHTML += `<span>${text[index]}<span/>`
   } else {
-    title.innerHTML += `<span style='margin-right: 20px;'></span>` // Fixed closing tag
+    title.innerHTML += `<span style='margin-right: 20px;'><span/>`
   }
 }
 
 const textElements = document.querySelectorAll('.title span');
 textElements.forEach((element) => {
   const randomDelay = Math.random() * 3; // Menghasilkan delay acak antara 0 hingga 3 detik
-  element.style.setProperty('--delay', `${randomDelay}s`); // Using CSS variable instead of direct animation-delay
+  element.style.animationDelay = `${randomDelay}s`;
 });
